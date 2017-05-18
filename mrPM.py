@@ -13,11 +13,11 @@ import threading
 # Connection
 server   = 'irc.underworld.no'
 port     = 6667
-use_ipv6 = False
+use_ipv6 = True
 use_ssl  = False
-vhost    = ''
+vhost    = '2001:41d0:a:37e5::4651:66ab'
 password = None
-channel  = '#channel'
+channel  = '#testee'
 key      = None
 
 # Identity
@@ -176,6 +176,7 @@ class IRC(object):
             else:
                 for name in config.nicklist:
                     try:
+                        print(f'[!!!] - Private messaging {name} ..')
                         message = config.message
                         self.sendmsg(name, message)
                     except:
